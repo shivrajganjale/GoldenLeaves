@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
+        .milestones-section {
+            position: relative;
+            background: linear-gradient(to right, #0d6b99, #18a98b);
+            color: white;
+            padding: 50px;
+            border-radius: 0px;
+            width:100%;
+            
+            text-align: left;
+            overflow: hidden;
+        }
+       
+        .milestones-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .milestones-section h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .milestone {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        .milestone i {
+            color: white;
+            background: #0d6b99;
+            padding: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 0;
+        }
+        .heading {
+            color: #000;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .subheading {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .service-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .highlighted {
+            background: #b2e2e2;
+        }
+        .service-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+        .service-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .service-description {
+            font-size: 14px;
+            color: #666;
+        }
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service-card {
+            flex: 1 1 300px;
+            max-width: 100%;
+        }
+
+        .how{
+            background-color: #18a98b;
+            
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 0;
+            
+        }
+        .heading {
+            color: #000;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .subheading {
+            color: #007acc;
+            font-size: 16px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .milestones {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .milestone-card {
+            background: #a8cbd2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            flex: 1 1 300px;
+            max-width: 100%;
+            position: relative;
+        }
+        .milestone-card {
+          
+            background: #d4e6e6;
+        }
+        .milestone-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #007acc;
+            color: #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .milestone-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .milestone-description {
+            font-size: 14px;
+            color: #333;
+        }
+
+
+        .portfolio-section {
+            background-color: #0A5957;
+            padding: 60px 20px;
+            color: white;
+        }
+        .portfolio-heading {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .portfolio-subheading {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+        .portfolio-items {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .portfolio-card {
+            width: 300px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .portfolio-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .portfolio-footer {
+            margin-top: 20px;
+        }
+        .portfolio-button {
+            background: white;
+            color: black;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .navigation-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .nav-button {
+            background: white;
+            color: black;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            padding-right: 15px; 
+        }
+
+
+        
+
+        .nav-button:hover {
+            background: #ddd;
+        }
+
+
+          /* TESTIMONIAL */
+    .testimonial-section {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .testimonial-title {
+      font-weight: bold;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-box {
+      max-width: 600px;
+      margin: auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 30px;
+      position: relative;
+    }
+
+    .testimonial-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      float: left;
+      margin-right: 15px;
+    }
+
+    .testimonial-stars {
+      color: gold;
+      margin-top: 5px;
+    }
+
+    .testimonial-nav {
+      display: flex;
+      justify-content: space-between;
+      max-width: 650px;
+      margin: 20px auto;
+    }
+
+    .testimonial-nav button {
+      background-color: #f9f9f9;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(to right, #0ba360, #3cba92);
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .cta-section p {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .cta-section button {
+      background-color: white;
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* CONTACT FORM */
+    .form-section {
+      background-color: #000;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .form-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 5px;
+    }
+
+    .submit-btn {
+      background: linear-gradient(to right, #0ba360, #3cba92);
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* FOOTER */
+    .footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      color: white;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-top: 20px;
+    }
+
+    .socials img {
+      width: 24px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+
+    
+
+    .contact-form-container {
+  background-color: #ffffff;
+  display: none;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 400px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  background-color: #e2e2e2;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #004e92, #00c9a7);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  
+}
+
+.submit-btn:hover {
+  background: linear-gradient(to right, #003973, #00c9a7);
+}
+
+
+
+
+    /* Popup Styling */
+    .popup-modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .popup-content {
+      background-color: #fff;
+      margin: 100px auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .popup-content label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .popup-content input,
+    .popup-content textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: #eaeaea;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #005c97, #00c9a7);
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+ 
+
+   
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Logo" height="40"> Lemonerds 
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item "><a class="nav-link" href="#">Home</a></li>
+
+                    <li class="nav-item "><a class="nav-link" href="#">About Us</a></li>
+
+                    <li class="nav-item "><a class="nav-link" href="#">Services</a></li>
+
+                    <li class="nav-item "><a class="nav-link" href="#">Contact </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Juice Up Your Business with <span class="text-success">Lemonerds</span></h1>
+                    <p>Your Nerdy Digital Marketing Partner!</p>
+                    <a href="#" class="btn btn-success">Contact Us</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="images/Hero Image.png" alt="Marketing" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Overview Section -->
+        <section class="overview-section text-center py-5">
+            <div class="container">
+                <p class="text-success">Overview</p>
+                <h2 class="fw-bold">Welcome to Lemonerds!</h2>
+                <p class="lead">A Real Estate Digital Marketing agency redefining the lead generation market.</p>
+                <div class="row mt-4 bg-success text-white py-4 rounded" >
+                    <div class="col-md-4">
+                        <h3 >200+</h3><hr/>
+                        <p>Projects marketed successfully</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>2,25,000+</h3><hr/>
+                        <p>Leads generated for real estate projects</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 >₹50+ Cr</h3><hr/>
+                        <p>Google and Meta ad spend managed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Real Estate Section -->
+    <section class="real-estate-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Text Section -->
+                <div class="col-md-6">
+                    <h2 class="fw-bold">Real estate isn’t just another vertical—it’s our forte!</h2>
+                    <p class="text-muted">
+                        
+                            With a unique blend of AI-driven strategies, cutting-edge technology, and industry expertise, we create solutions tailored to your business growth.
+                    </p>
+                    <p class="text-muted">
+                            From crafting high-performance Ads, social media campaigns to designing captivating branding materials, and generating unbelievable leads, Lemonerds brings unparalleled insight into what works in this competitive market.
+                    </p>
+                </div>
+
+                <!-- Right Image Section -->
+                <div class="col-md-6 text-center">
+                    <img src="images/Overview Image.png" alt="Real Estate Illustration" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Milestone Section-->
+    <div class="milestones-section">
+        <h2>Why Us?</h2>
+        <h1>Our Milestones, Your Success!</h1>
+        <div class="milestone">
+            <i class="fa fa-check"></i>
+            <span><strong>2 Crores</strong> Projects marketed successfully</span>
+        </div>
+        <div class="milestone">
+            <i class="fa fa-check"></i>
+            <span><strong>12,000+</strong> Regions Reached.</span>
+        </div>
+        <div class="milestone">
+            <i class="fa fa-check"></i>
+            <span><strong>83%</strong> Client Retention Rate proving our trustworthiness.</span>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h3 class="subheading text-center text-success">Services</h3>
+        <h1 class="heading text-center ">DIGITAL MARKETING TOOLBOX<br>Turn Your Properties into Possibilities!</h1>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="images/Google Ads.png" alt="Google Ads">
+                <div class="service-title">Google Ads</div>
+                <div class="service-description">Maximize visibility and turn clicks into site visits with data-backed campaigns.</div>
+            </div>
+            <div class="service-card">
+                <img src="images/Facebook and Instagram Ads.png" alt="Facebook Ads">
+                <div class="service-title">Facebook and Instagram Ads</div>
+                <div class="service-description">Experience viral campaigns as we connect your property with the right audience, driving clicks, inquiries, and conversions.</div>
+            </div>
+            <div class="service-card">
+                <img src="images/Social Media Management.png" alt="Social Media Management">
+                <div class="service-title">Social Media Management</div>
+                <div class="service-description">Engage, connect, and convert with expert social media management for your real estate brand.</div>
+            </div>
+            <div class="service-card">
+                <img src="images/Web Development.png" alt="Web Development">
+                <div class="service-title">Web Development</div>
+                <div class="service-description">Create stunning, dynamic and user-friendly websites tailored to your real estate needs.</div>
+            </div>
+            <div class="service-card">
+                <img src="images/Comprehensive Tracking Setup.png" alt="Comprehensive Tracking">
+                <div class="service-title">Comprehensive Tracking Setup</div>
+                <div class="service-description">Optimize performance with expert tagging and analytics integration.</div>
+            </div>
+            <div class="service-card">
+                <img src="images/Branding and Design.png" alt="Branding and Design">
+                <div class="service-title">Branding and Design</div>
+                <div class="service-description">Create stunning, dynamic and user-friendly websites tailored to your real estate needs.</div>
+            </div>
+            <div class="service-card">
+                <img src="images/Digital Marketing Strategy for Real Estate Businesses.png" alt="Branding and Design">
+                <div class="service-title">Branding and Design</div>
+                <div class="service-description">Create stunning, dynamic and user-friendly websites tailored to your real estate needs.</div>
+            </div>
+            <div class="service-card">
+                <img src="images/SEO for Real Estate Websites.png" alt="Branding and Design">
+                <div class="service-title">Branding and Design</div>
+                <div class="service-description">Create stunning, dynamic and user-friendly websites tailored to your real estate needs.</div>
+            </div>
+            <div class="service-card">
+                <img src="images/Content Marketing for Real Estate Businesses.png" alt="Branding and Design">
+                <div class="service-title">Branding and Design</div>
+                <div class="service-description">Create stunning, dynamic and user-friendly websites tailored to your real estate needs.</div>
+            </div>
+
+        
+        </div>
+    </div>
+
+
+    <!--How it works-->
+    <div class="how">
+
+    <div class="container">
+        <h3 class="subheading">How it Works</h3>
+        <h1 class="heading">From Idea to Impact</h1>
+        <div class="milestones">
+            <div class="milestone-card">
+                <div class="milestone-number">01</div>
+                <div class="milestone-title">Understand & Strategize</div>
+                <div class="milestone-description">We begin by diving deep into your goals, target audience, and business challenges. Our teams conduct thorough research and brainstorming to craft a tailored strategy that aligns with your objectives.</div>
+            </div>
+            <div class="milestone-card">
+                <div class="milestone-number">02</div>
+                <div class="milestone-title">Build & Execute</div>
+                <div class="milestone-description">Using cutting-edge AI tools and proven techniques, we bring your strategy to life. From designing campaigns to launching ads, websites, or branding initiatives, every step is executed with precision.</div>
+            </div>
+            <div class="milestone-card">
+                <div class="milestone-number">03</div>
+                <div class="milestone-title">Analyze & Optimize</div>
+                <div class="milestone-description">Our work doesn’t end at launch. We continuously monitor performance, gather insights, and refine strategies to maximize ROI and ensure sustainable growth.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="portfolio-section">
+    <h3 class="portfolio-subheading text-center">Portfolio</h3>
+    <h1 class="portfolio-heading text-center">Where Vision Meets Reality</h1>
+    <p class="text-center">At Lemonerds, every digital marketing campaign we create tells a success story.<br>
+        Our portfolio is a showcase of innovative strategies, creative designs, and impactful results tailored exclusively for the particular project.</p>
+    
+    <div class="portfolio-items">
+        <div class="portfolio-card">
+            <img src="images/Rectangle 11877.png" alt="Portfolio 1">
+        </div>
+        <div class="portfolio-card">
+            <img src="images/Rectangle 11878.png" alt="Portfolio 2">
+        </div>
+        <div class="portfolio-card">
+            <img src="images/Rectangle 11879.png" alt="Portfolio 3">
+        </div>
+    </div>
+
+    <div class="portfolio-footer text-center">
+        <button class="portfolio-button">Dive into the possibilities for your venture!</button>
+        
+    </div>
+
+    <div class="navigation-buttons">
+        <button class="nav-button"><</button>
+        <button class="nav-button">></button>
+    </div>
+</div>
+
+
+ <!-- TESTIMONIAL -->
+ <section class="testimonial-section">
+    <h4 style="color: teal;">Testimonial</h4>
+    <h2 class="testimonial-title">Success Stories, Straight from Our Clients</h2>
+
+    <div class="testimonial-box">
+      <div style="display: flex; align-items: center;">
+        <img src="images/Rectangle 11877.png" alt="Client" class="testimonial-img" />
+        <div style="text-align: left;">
+          <strong>Rohit Bhosale</strong><br />
+          <span class="testimonial-stars">★★★★★</span>
+        </div>
+      </div>
+      <p style="margin-top: 20px; text-align: left;">
+        Our visibility tripled & lead flow doubled within weeks of launching Google Ads with Lemonerds. Their strategies are data-driven and results are consistent. Highly recommended!
+      </p>
+    </div>
+
+    <div class="testimonial-nav">
+      <button><</button>
+      <button>></button>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <p>Sip some lemonade, and let Lemonerds handle the rest—because we’re simply the best!</p>
+    <button onclick="openForm()">Contact Us</button>
+  </section>
+  
+  <div class="contact-form-container" >
+    <form class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your Name">
+  
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your Email">
+  
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" placeholder="Enter your Number">
+  
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="How may we assist you?"></textarea>
+  
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  
+
+
+
+  <!-- FORM SECTION -->
+  <section class="form-section">
+    <form class="form-container">
+      <div>
+        <label>Name</label><br />
+        <input type="text" placeholder="Enter your Name" />
+      </div>
+      <div>
+        <label>Email</label><br />
+        <input type="email" placeholder="Enter your Email" />
+      </div>
+      <div>
+        <label>Phone Number</label><br />
+        <input type="tel" placeholder="Enter your Number" />
+      </div>
+      <div>
+        <label>Message</label><br />
+        <textarea rows="4" placeholder="Enter your message"></textarea>
+      </div>
+      <div>
+        <label>Select the service</label><br />
+        <select >
+            <option> </option>
+          <option>Google Ads</option>
+          <option>Facebook and Instagram Ads</option>
+          <option>Web Development</option>
+          <option>Social Media Management</option>
+          <option>Branding and Design</option>
+          <option>Real Estate Marketing</option>
+          <option>SEO</option>
+        </select>
+      </div>
+      <div style="align-self: start;">
+        <button class="submit-btn">Submit</button>
+      </div>
+    </form>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-column">
+        <div class="footer-logo">🍋 Lemonerds</div>
+        <p>Address<br />B3-411, Blue Ridge Township, Hinjawadi Phase 1, Pune - 411057</p>
+      </div>
+      <div class="footer-column">
+        <p><strong>Email</strong><br />hello@lemonerds.com</p>
+        <p><strong>Phone Number</strong><br />+91 12345 67890</p>
+      </div>
+      <div class="footer-column">
+        <p><strong>Follow Us</strong></p>
+        <div class="socials">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" />
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="LinkedIn" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popup Modal -->
+  <div id="popupForm" class="popup-modal">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closeForm()">X</span>
+      <form class="popup" id="contactForm">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your Name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your Email">
+
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" placeholder="Enter your Number">
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="How may we assist you?"></textarea>
+
+        <button type="submit" class="submit-btn" onclick="telegram()">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  
+
+
+
+
+
+
+
+
+
+          
+
+    <!-- Bootstrap Script -->
+    <script>
+        // Open and close popup
+        function openForm() {
+          document.getElementById("popupForm").style.display = "block";
+        }
+      
+        function closeForm() {
+          document.getElementById("popupForm").style.display = "none";
+        }
+      
+        window.onclick = function(event) {
+          const modal = document.getElementById("popupForm");
+          if (event.target === modal) {
+            closeForm();
+          }
+        };
+      
+        // Telegram bot integration
+        function telegram(){
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+          e.preventDefault();
+      
+          // Get values
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const message = document.getElementById("message").value.trim();
+      
+          // Construct message
+          const telegramMessage = `📩 *New Contact Form Submission*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n📱 *Phone:* ${phone}\n💬 *Message:* ${message}`;
+      
+          // Replace these with your own credentials
+          const botToken = "8168840871:AAG7qQsAYoO6kDG2UxMuvOinMFMls-r9tJ8";
+          const chatId = "-4725110647"; // e.g. -123456789
+      
+          const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+      
+          fetch(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              chat_id: chatId,
+              text: telegramMessage,
+              parse_mode: "Markdown"
+            })
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (data.ok) {
+              alert("Message sent successfully!");
+              closeForm();
+              document.getElementById("contactForm").reset();
+            } else {
+              alert("Error: " + data.description);
+              console.error("Telegram error:", data);
+            }
+          })
+          .catch(err => {
+            alert("Network error.");
+            console.error("Fetch error:", err);
+          });
+        });
+    }
+      </script>
+      
+
+
+      
+
+  
+  
+</body>
+</html>
